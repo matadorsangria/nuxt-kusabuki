@@ -14,8 +14,9 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^2.12.1",
-    "nuxt-imagemin": "^1.0.0"
+    "nuxt": "^2.12.2",
+    "nuxt-imagemin": "^1.0.0",
+    "nuxt-webfontloader": "^1.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
