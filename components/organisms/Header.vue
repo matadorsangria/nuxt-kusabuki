@@ -1,0 +1,215 @@
+<template>
+  <header id="header" :class="{ 'is-open': globalMenuOpen }">
+    <div
+      class="header__bg"
+      :class="{ 'is-active': !isTop || headerBgActive }"
+    />
+    <p class="header__logo">
+      <a href="/">
+        <span>Ancient Town Kusabuki</span>
+        produced by matadorsangria
+      </a>
+    </p>
+    <div class="sp__menu" @click="switchGlobalMenu">
+      <div class="sp__menu--line" />
+      <div class="sp__menu--line" />
+      <div class="sp__menu--line" />
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav--list">
+        <li><a href="/">TOP</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/stories">STORIES</a></li>
+        <li><a href="/news">NEWS</a></li>
+        <li>
+          <a href="/locations" @click.prevent>LOCATIONS</a>
+        </li>
+        <li>
+          <a href="/contact" @click.prevent>CONTACT</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</template>
+
+<script>
+import { mapState, mapMutations } from 'vuex';
+
+export default {
+  props: {
+    page: {
+      required: false,
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    ...mapState(['globalMenuOpen', 'headerBgActive']),
+    isTop() {
+      return this.page === 'top';
+    }
+  },
+  mounted() {
+    if (this.isTop) {
+      const mvObserver = new IntersectionObserver(
+        e => {
+          this.setHeaderBgActive(!e[0].isIntersecting);
+        },
+        {
+          root: null,
+          threshold: 0.25
+        }
+      );
+      mvObserver.observe(document.querySelector('.js-slide'));
+    }
+  },
+  methods: {
+    ...mapMutations(['setGlobalMenuOpen', 'setHeaderBgActive']),
+    switchGlobalMenu() {
+      this.setGlobalMenuOpen(!this.globalMenuOpen);
+      document.querySelector('body').classList.toggle('scroll-stop');
+    }
+  }
+};
+</script>
+
+<style>
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__bg {
+  position: absolute;
+  top: -70px;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(71, 71, 66);
+  box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.6);
+  transition: all 1s;
+}
+.header__bg.is-active {
+  top: 0;
+}
+.header__logo {
+  position: relative;
+  padding: 20px;
+  line-height: 1.25;
+  font-family: 'Times New Roman', serif;
+  font-size: 10px;
+  z-index: 10;
+}
+.header__logo a {
+  display: block;
+  color: #fff;
+}
+.header__logo span {
+  display: block;
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+}
+@media (min-width: 678px) {
+  .header__nav {
+    position: relative;
+    padding: 20px;
+    font-size: 12px;
+  }
+  .header__nav--list {
+    display: flex;
+  }
+  .header__nav--list li {
+    margin: 5px;
+    letter-spacing: 1px;
+  }
+  .header__nav--list li a {
+    display: block;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  .header__nav--list li a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+  }
+}
+@media (max-width: 677px) {
+  .is-open .header__logo a {
+    color: #000;
+  }
+  .sp__menu {
+    position: relative;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    margin-right: 20px;
+  }
+  .sp__menu--line {
+    position: absolute;
+    left: 8px;
+    width: 20px;
+    height: 1px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+  .sp__menu--line:nth-child(1) {
+    top: 9px;
+  }
+  .sp__menu--line:nth-child(2) {
+    top: 17px;
+    opacity: 1;
+  }
+  .sp__menu--line:nth-child(3) {
+    bottom: 10px;
+  }
+  .is-open .sp__menu--line {
+    background-color: #000;
+  }
+  .is-open .sp__menu--line:nth-child(1) {
+    top: 17px;
+    transform: rotate(45deg);
+  }
+  .is-open .sp__menu--line:nth-child(2) {
+    opacity: 0;
+  }
+  .is-open .sp__menu--line:nth-child(3) {
+    bottom: 18px;
+    transform: rotate(-45deg);
+  }
+  .header__nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    transition: height 0.01s, opacity 0.3s;
+    text-align: center;
+  }
+  .is-open .header__nav {
+    height: 100%;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .header__nav ul li {
+    margin: 30px 20px;
+    letter-spacing: 2px;
+    font-size: 22px;
+  }
+  .header__nav ul li a {
+    color: #000;
+  }
+}
+</style>
