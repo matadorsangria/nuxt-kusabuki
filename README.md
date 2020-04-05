@@ -15,7 +15,7 @@ yarn start
 - Nuxt.js (using Vuex)
 
 ## Design
-- Responsive Design
+- Responsive Web Design
 - Original loading animation
 
 ## Photos
