@@ -23,9 +23,9 @@
         <template v-slot:content>
           <p>
             Kusabuki is surrounded by mountains on three sides with the east
-            side facing the sea, and has a warm and comfortable climate. The
-            town has thrived as a flower production base from long ago. Many
-            tourists visit the place to feel its abundant nature and taste of
+            side facing the sea and has a warm and comfortable climate. The town
+            has thrived as a flower production base from long ago. Many tourists
+            visit the place to feel its abundant nature and taste of
             long-established history.
             <br />
             Kusabuki has a nature preserve popular for the eco-tourism, Mt.
