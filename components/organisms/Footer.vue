@@ -44,8 +44,9 @@
 <style>
 footer {
   margin-top: 70px;
-  position: relative;
   padding: 40px 20px;
+  background-color: #222;
+  color: #fff;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -54,19 +55,8 @@ footer {
     font-size: 10px;
   }
 }
-footer:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 80%;
-  max-width: 1000px;
-  height: 1px;
-  transform: translateX(-50%);
-  background-color: #999;
-}
 footer a {
-  color: #222;
+  color: #fff;
 }
 footer .demo-icon {
   font-family: 'fontello';
@@ -86,7 +76,7 @@ footer .sns li {
   }
 }
 footer .sns li a:hover {
-  color: #666;
+  color: #999;
 }
 footer .links {
   display: flex;

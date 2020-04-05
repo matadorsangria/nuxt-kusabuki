@@ -28,7 +28,8 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
-html {
+body {
+  -webkit-text-size-adjust: 100%;
   line-height: 1;
   font-family: "Avenir",sans-serif;
   font-size: 16px;
@@ -38,9 +39,10 @@ html {
       font-size: 14px;
     }
   }
-}
-body.scroll-stop {
-  overflow: hidden;
+
+  &.scroll-stop {
+    overflow: hidden;
+  }  
 }
 
 body, ul, li {

@@ -10,32 +10,32 @@
       <div class="wrapper">
         <figure class="card order-1">
           <figcaption>
-            <span class="label">SEA BREAZE</span>
-            <p>Nagisa</p>
+            <span class="label">Sea Sound</span>
+            <p>before dark</p>
           </figcaption>
-          <a href="#" class="target" @click.prevent />
+          <a href="/stories#story01" class="target" />
           <div class="quickbuy">
-            <a href="#" class="button" @click.prevent>Show Detail</a>
+            <a href="/stories#story01" class="button">Show Detail</a>
           </div>
         </figure>
         <figure class="card order-2">
           <figcaption style="color: black;">
-            <span class="label">NATURE TOUR</span>
-            <p>Komorebi</p>
+            <span class="label">Living with Flowers</span>
+            <p>cluster amaryllises</p>
           </figcaption>
-          <a href="#" class="target" @click.prevent />
+          <a href="/stories#story02" class="target" />
           <div class="quickbuy">
-            <a href="#" class="button" @click.prevent>Show Detail</a>
+            <a href="/stories#story02" class="button">Show Detail</a>
           </div>
         </figure>
         <figure class="card order-3">
           <figcaption>
-            <span class="label">CULTURE STUDY</span>
-            <p>Kimonoto</p>
+            <span class="label">Kimono Culture</span>
+            <p>ohanami picnic</p>
           </figcaption>
-          <a href="#" class="target" @click.prevent />
+          <a href="/stories#story03" class="target" />
           <div class="quickbuy">
-            <a href="#" class="button">Show Detail</a>
+            <a href="/stories#story03" class="button">Show Detail</a>
           </div>
         </figure>
       </div>

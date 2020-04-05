@@ -9,9 +9,10 @@
         Pickup Stories
       </template>
       <template v-slot:content>
-        <SectionText>
+        <SectionText id="story01">
           <template v-slot:title>
-            SEA BREAZE
+            海の音色を聴く
+            <span :class="$style.subtitle">− Sea Sound −</span>
           </template>
           <template v-slot:content>
             <div :class="$style.textWrap">
@@ -58,9 +59,10 @@
             </div>
           </template>
         </SectionText>
-        <SectionText>
+        <SectionText id="story02">
           <template v-slot:title>
-            NATURE TOUR
+            花とともにある暮らし
+            <span :class="$style.subtitle">− Living with flowers −</span>
           </template>
           <template v-slot:content>
             <div :class="$style.textWrap">
@@ -84,8 +86,7 @@
                 <br />
                 Morbi blandit cursus risus at ultrices mi tempus imperdiet.
                 Tincidunt augue interdum velit euismod in pellentesque massa
-                placerat duis. Tincidunt augue interdum velit euismod in
-                pellentesque massa placerat duis.
+                placerat duis.
               </p>
               <div :class="[$style.imageWrap, $style.imageWrap02]">
                 <div :class="$style.imageWrap__inner">
@@ -114,9 +115,10 @@
             </div>
           </template>
         </SectionText>
-        <SectionText>
+        <SectionText id="story03">
           <template v-slot:title>
-            CULTURE STUDY
+            着物文化が根付く町
+            <span :class="$style.subtitle">− Kimono Culture −</span>
           </template>
           <template v-slot:content>
             <div :class="$style.textWrap">
@@ -218,6 +220,14 @@ export default {
 </script>
 
 <style module lang="scss">
+.subtitle {
+  font-size: 18px;
+
+  @media (max-width: 677px) {
+    display: block;
+    font-size: 16px;
+  }
+}
 .textWrap {
   margin: calc(-0.8em - 20px) -60px 0;
 
@@ -253,5 +263,3 @@ export default {
   backdrop-filter: brightness(0.4) blur(3px);
 }
 </style>
-
-<style scoped></style>

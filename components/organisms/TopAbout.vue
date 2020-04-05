@@ -7,15 +7,12 @@
         </template>
         <template v-slot:content>
           <p>
-            雨ニモマケズ 風ニモマケズ 雪ニモ夏ノ暑サニモマケヌ
-            丈夫ナカラダヲモチ 慾ハナク 決シテ瞋ラズ イツモシヅカニワラッテヰル
+            三方を山に囲まれ東側を海に面した草吹町は、気候も温暖で過ごしやすく、古くから花卉の栽培地として栄えてきました。
+            <br />
+            現在も豊かな自然に抱かれたこの町には長い歴史が醸し出す風情が漂い、観光地としての賑わいを見せています。
             <br />
             <br />
-            一日ニ玄米四合ト 味噌ト少シノ野菜ヲタベ アラユルコトヲ
-            ジブンヲカンジョウニ入レズニ ヨクミキキシワカリ ソシテワスレズ
-            <br />
-            野原ノ松ノ林ノ蔭ノ 小サナ萓ブキノ小屋ニヰテ 東ニ病気ノコドモアレバ
-            行ッテ看病シテヤリ 西ニツカレタ母アレバ 行ッテソノ稲ノ朿ヲ負ヒ
+            美しい白浜を有する凪瀬海岸、エコツーリズムが盛んな自然保護区、ハイキング客で賑わう黒姫山、時期によって様々な表情を見せるこの町で、日本を再発見してみませんか。
           </p>
         </template>
       </SectionText>
@@ -25,15 +22,15 @@
         </template>
         <template v-slot:content>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Kusabuki is surrounded by mountains on three sides with the east
+            side facing the sea, and has a warm and comfortable climate. The
+            town has thrived as a flower production base from long ago. Many
+            tourists visit the place to feel its abundant nature and taste of
+            long-established history.
             <br />
-            <br />
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Kusabuki has a nature preserve popular for the eco-tourism, Mt.
+            Kurohime crowded with hikers, and beautiful Nagise coast. It conveys
+            many different expressions in accordance to the season.
           </p>
         </template>
       </SectionText>
