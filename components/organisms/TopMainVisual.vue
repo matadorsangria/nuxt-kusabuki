@@ -167,27 +167,21 @@ export default {
 
 @keyframes scrollarrow {
   0% {
-    -webkit-clip-path: inset(0 0 0 0);
     clip-path: inset(0 0 0 0);
   }
   25% {
-    -webkit-clip-path: inset(0 0 0 0);
     clip-path: inset(0 0 0 0);
   }
   50% {
-    -webkit-clip-path: inset(100% 0 0 0);
     clip-path: inset(100% 0 0 0);
   }
   51% {
-    -webkit-clip-path: inset(0 0 100% 0);
     clip-path: inset(0 0 100% 0);
   }
   75% {
-    -webkit-clip-path: inset(0 0 0 0);
     clip-path: inset(0 0 0 0);
   }
   to {
-    -webkit-clip-path: inset(0 0 0 0);
     clip-path: inset(0 0 0 0);
   }
 }

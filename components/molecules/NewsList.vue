@@ -33,6 +33,6 @@ export default {
   display: grid;
   margin-bottom: 40px;
   gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 </style>
