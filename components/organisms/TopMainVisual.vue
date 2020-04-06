@@ -4,15 +4,15 @@
       <ul>
         <li
           :class="$style.slide__list"
-          :style="{ backgroundImage: `url(${image04})`, display: 'none' }"
+          :style="{ backgroundImage: `url(${image04})` }"
         />
         <li
           :class="$style.slide__list"
-          :style="{ backgroundImage: `url(${image03})`, display: 'none' }"
+          :style="{ backgroundImage: `url(${image03})` }"
         />
         <li
           :class="$style.slide__list"
-          :style="{ backgroundImage: `url(${image02})`, display: 'none' }"
+          :style="{ backgroundImage: `url(${image02})` }"
         />
         <li
           :class="$style.slide__list"
@@ -54,6 +54,9 @@ export default {
   mounted() {
     const $ul = document.querySelector('.js-slide ul');
     const slideCount = $ul.querySelectorAll('li').length;
+    for (let i = 0; i < slideCount - 1; i++) {
+      $ul.children[i].style.display = 'none';
+    }
     setInterval(async () => {
       $ul.children[slideCount - 2].style.display = 'block';
       await this.$delay(1000);
