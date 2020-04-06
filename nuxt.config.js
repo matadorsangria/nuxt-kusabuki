@@ -33,9 +33,6 @@ module.exports = {
     }
   },
   loading: { color: '#3B8070' },
-  server: {
-    host: '0.0.0.0' // default: localhost
-  },
   build: {
     extend(config, { isDev, isClient }) {
       config.performance.maxAssetSize = 400000;
