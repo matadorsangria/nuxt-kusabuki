@@ -79,7 +79,6 @@ export default {
   &::after {
     content: '';
     position: absolute;
-    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -117,7 +116,6 @@ export default {
 }
 .mainvisualText {
   position: absolute;
-  z-index: 10;
   width: 100%;
   height: 100%;
   display: flex;
@@ -151,7 +149,6 @@ export default {
   bottom: 0;
   display: flex;
   align-items: center;
-  z-index: 15;
   writing-mode: vertical-rl;
   letter-spacing: 1px;
   font-size: 12px;

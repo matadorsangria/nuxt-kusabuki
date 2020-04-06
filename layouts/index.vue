@@ -75,9 +75,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$zindex-loading: 200;
+
 .loading {
   position: fixed;
-  z-index: 102;
+  z-index: $zindex-loading;
   top: 0;
   width: 100%;
   height: 100%;

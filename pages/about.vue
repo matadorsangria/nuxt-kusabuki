@@ -113,6 +113,9 @@ export default {
 </script>
 
 <style module lang="scss">
+$zindex-photoFrameLft: 20;
+$zindex-photoFrameRgt: 10;
+
 .wrapper {
   margin: 0 -60px;
 
@@ -134,14 +137,14 @@ export default {
   box-sizing: content-box;
 }
 .photoFrame__lft {
-  z-index: 10;
+  z-index: $zindex-photoFrameLft;
   left: 0;
   top: 60px;
   border-top: 2px solid #fff;
   border-right: 2px solid #fff;
 }
 .photoFrame__rgt {
-  z-index: 9;
+  z-index: $zindex-photoFrameRgt;
   right: 0;
 }
 

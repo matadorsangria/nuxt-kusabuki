@@ -12,16 +12,20 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  styleResources: {
+    scss: ['~/assets/css/_variables.scss']
+  },
   css: ['~/assets/css/main.scss'],
   plugins: ['~/plugins/mixin.js'],
   modules: [
+    'nuxt-webfontloader',
+    '@nuxtjs/style-resources',
     [
       'nuxt-imagemin',
       {
         plugins: [imageminMozjpeg({ quality: 80 })]
       }
-    ],
-    ['nuxt-webfontloader']
+    ]
   ],
   webfontloader: {
     google: {

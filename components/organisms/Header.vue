@@ -79,7 +79,7 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 101;
+  z-index: $zindex-header;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,7 +103,7 @@ export default {
   line-height: 1.25;
   font-family: 'Times New Roman', serif;
   font-size: 10px;
-  z-index: 10;
+  z-index: $zindex-sp-headerLogo;
   a {
     display: block;
     color: #fff;
