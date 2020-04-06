@@ -4,6 +4,9 @@ module.exports = {
   mode: 'spa',
   head: {
     title: 'kusabuki',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'robots', content: 'noindex , nofollow' },
@@ -19,13 +22,7 @@ module.exports = {
   plugins: ['~/plugins/mixin.js'],
   modules: [
     'nuxt-webfontloader',
-    '@nuxtjs/style-resources',
-    [
-      'nuxt-imagemin',
-      {
-        plugins: [imageminMozjpeg({ quality: 80 })]
-      }
-    ]
+    '@nuxtjs/style-resources'
   ],
   webfontloader: {
     google: {
@@ -45,5 +42,11 @@ module.exports = {
         });
       }
     }
-  }
+  },
+  buildModules: [
+    '@bazzite/nuxt-optimized-images'
+  ],
+  optimizedImages: {
+    optimizeImages: true
+  },
 };

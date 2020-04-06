@@ -17,12 +17,13 @@
               before dark
             </p>
           </figcaption>
-          <a href="/stories#story01" :class="$style.story__link" />
-          <div :class="$style.story__button">
-            <a href="/stories#story01" :class="$style.story__buttonlink">
-              Show Detail
-            </a>
-          </div>
+          <a href="/stories#story01" :class="$style.story__link">
+            <div :class="$style.story__button">
+              <span :class="$style.story__buttonlink">
+                Show Detail
+              </span>
+            </div>
+          </a>
         </figure>
         <figure :class="$style.story02">
           <figcaption style="color: black;">
@@ -33,12 +34,13 @@
               cluster amaryllises
             </p>
           </figcaption>
-          <a href="/stories#story02" :class="$style.story__link" />
-          <div :class="$style.story__button">
-            <a href="/stories#story02" :class="$style.story__buttonlink">
-              Show Detail
-            </a>
-          </div>
+          <a href="/stories#story02" :class="$style.story__link">
+            <div :class="$style.story__button">
+              <span :class="$style.story__buttonlink">
+                Show Detail
+              </span>
+            </div>
+          </a>
         </figure>
         <figure :class="$style.story03">
           <figcaption>
@@ -49,12 +51,13 @@
               ohanami picnic
             </p>
           </figcaption>
-          <a href="/stories#story03" :class="$style.story__link" />
-          <div :class="$style.story__button">
-            <a href="/stories#story03" :class="$style.story__buttonlink">
-              Show Detail
-            </a>
-          </div>
+          <a href="/stories#story03" :class="$style.story__link">
+            <div :class="$style.story__button">
+              <span :class="$style.story__buttonlink">
+                Show Detail
+              </span>
+            </div>
+          </a>
         </figure>
       </div>
       <VButton link="/stories" text="Read More" />
