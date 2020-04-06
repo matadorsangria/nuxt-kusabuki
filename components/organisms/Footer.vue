@@ -41,65 +41,67 @@
   </footer>
 </template>
 
-<style>
+<style scoped lang="scss">
 footer {
   margin-top: 70px;
   padding: 40px 20px;
   background-color: #222;
   color: #fff;
   text-align: center;
-}
-@media (max-width: 767px) {
-  footer {
-    margin-top: 50px;
-    font-size: 10px;
+  @media (max-width: 767px) {
+    & {
+      margin-top: 50px;
+      font-size: 10px;
+    }
   }
-}
-footer a {
-  color: #fff;
-}
-footer .demo-icon {
-  font-family: 'fontello';
-}
-footer .sns {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-footer .sns li {
-  margin: 0 10px;
-  font-size: 18px;
-}
-@media (max-width: 1024px) {
-  footer .sns li {
-    font-size: 16px;
+  a {
+    color: #fff;
   }
-}
-footer .sns li a:hover {
-  color: #999;
-}
-footer .links {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-footer .links li {
-  margin: 0 5px;
-  font-size: 12px;
-}
-@media (max-width: 767px) {
-  footer .links {
-    display: block;
-    margin-top: 15px;
+  .demo-icon {
+    font-family: 'fontello';
   }
-  footer .links li {
-    margin-bottom: 15px;
+  .sns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    li {
+      margin: 0 10px;
+      font-size: 18px;
+      @media (max-width: 1024px) {
+        & {
+          font-size: 16px;
+        }
+      }
+      a:hover {
+        color: #999;
+      }
+    }
   }
-}
-footer .links li a {
-  margin-right: 4px;
-}
-footer .links li a:hover {
-  text-decoration: underline;
+  .links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    @media (max-width: 767px) {
+      & {
+        display: block;
+        margin-top: 15px;
+      }
+    }
+    li {
+      margin: 0 5px;
+      font-size: 12px;
+      @media (max-width: 767px) {
+        & {
+          margin-bottom: 15px;
+        }
+      }
+      a {
+        margin-right: 4px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 </style>

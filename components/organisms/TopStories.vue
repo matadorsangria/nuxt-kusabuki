@@ -7,35 +7,53 @@
       Pickup Stories
     </template>
     <template v-slot:content>
-      <div class="wrapper">
-        <figure class="card order-1">
+      <div :class="$style.wrapper">
+        <figure :class="$style.story01">
           <figcaption>
-            <span class="label">Sea Sound</span>
-            <p>before dark</p>
+            <p :class="$style.story__title">
+              Sea Sound
+            </p>
+            <p :class="$style.story__subtitle">
+              before dark
+            </p>
           </figcaption>
-          <a href="/stories#story01" class="target" />
-          <div class="quickbuy">
-            <a href="/stories#story01" class="button">Show Detail</a>
+          <a href="/stories#story01" :class="$style.story__link" />
+          <div :class="$style.story__button">
+            <a href="/stories#story01" :class="$style.story__buttonlink">
+              Show Detail
+            </a>
           </div>
         </figure>
-        <figure class="card order-2">
+        <figure :class="$style.story02">
           <figcaption style="color: black;">
-            <span class="label">Living with Flowers</span>
-            <p>cluster amaryllises</p>
+            <p :class="$style.story__title">
+              Living with Flowers
+            </p>
+            <p :class="$style.story__subtitle">
+              cluster amaryllises
+            </p>
           </figcaption>
-          <a href="/stories#story02" class="target" />
-          <div class="quickbuy">
-            <a href="/stories#story02" class="button">Show Detail</a>
+          <a href="/stories#story02" :class="$style.story__link" />
+          <div :class="$style.story__button">
+            <a href="/stories#story02" :class="$style.story__buttonlink">
+              Show Detail
+            </a>
           </div>
         </figure>
-        <figure class="card order-3">
+        <figure :class="$style.story03">
           <figcaption>
-            <span class="label">Kimono Culture</span>
-            <p>ohanami picnic</p>
+            <p :class="$style.story__title">
+              Kimono Culture
+            </p>
+            <p :class="$style.story__subtitle">
+              ohanami picnic
+            </p>
           </figcaption>
-          <a href="/stories#story03" class="target" />
-          <div class="quickbuy">
-            <a href="/stories#story03" class="button">Show Detail</a>
+          <a href="/stories#story03" :class="$style.story__link" />
+          <div :class="$style.story__button">
+            <a href="/stories#story03" :class="$style.story__buttonlink">
+              Show Detail
+            </a>
           </div>
         </figure>
       </div>
@@ -56,124 +74,115 @@ export default {
 };
 </script>
 
-<style>
+<style module lang="scss">
 .wrapper {
   display: grid;
   margin-bottom: 40px;
   gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-.label {
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.1rem;
-  font-size: 0.8rem;
-  opacity: 0.9;
-  font-weight: 500;
-}
-.wrapper figure {
+figure {
   height: 400px;
   background-position: center;
   background-size: cover;
-  transform: translateY(0);
-}
-@media (max-width: 1024px) {
-  .wrapper figure {
-    height: 380px;
-  }
-}
-.wrapper figure.order-1 {
-  background-image: url('~assets/images/pic_stories_01.jpg');
-}
-.wrapper figure.order-2 {
-  background-image: url('~assets/images/pic_stories_02.jpg');
-}
-.wrapper figure.order-3 {
-  background-image: url('~assets/images/pic_stories_03.jpg');
-}
-@media (max-width: 1024px) {
-  .wrapper figure {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-figure.card {
   overflow: hidden;
-}
+  transform: translateY(0);
 
-figure.card figcaption {
-  position: absolute;
-  bottom: 0;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  text-align: center;
-  backface-visibility: hidden;
-  color: #fff;
-  transition: transform 0.3s, opacity 0.3s, bottom 0.3s;
-}
-figure.card:hover figcaption {
-  opacity: 0;
-  transition: transform 0.3s, opacity 0.3s;
-}
-figure.card figcaption h3 {
-  margin-top: 15px;
-  font-size: 1.25rem;
-}
-figure.card figcaption p {
-  font-size: 1.25rem;
-  margin: 6px 0;
-}
-@media (max-width: 1024px) {
-  figure.card figcaption h3 {
-    font-size: 1rem;
+  @media (max-width: 1024px) {
+    & {
+      height: 380px;
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  figure.card figcaption p {
-    font-size: 1rem;
+
+  &.story01 {
+    background-image: url('~assets/images/pic_stories_01.jpg');
   }
-}
-.target {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-}
-figure.card .quickbuy {
-  z-index: 10000;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding-bottom: 30px;
-  transition: transform 0.3s;
-  transform: translateY(20%);
-  opacity: 0;
-  text-align: center;
-}
-figure.card:hover .quickbuy {
-  transform: translateY(0%);
-  opacity: 1;
-  transition: transform 0.3s, opacity 0.5s;
-}
-.button {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.1rem;
-  color: #fff;
-  background: black;
-  opacity: 1;
-  font-size: 0.8rem;
-  position: relative;
-  padding: 15px;
-  font-weight: 500;
-  line-height: 1;
-  cursor: pointer;
-  transition: all 0.25s;
+  &.story02 {
+    background-image: url('~assets/images/pic_stories_02.jpg');
+  }
+  &.story03 {
+    background-image: url('~assets/images/pic_stories_03.jpg');
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    color: #fff;
+    transition: transform 0.3s, opacity 0.3s, bottom 0.3s;
+
+    .story__title {
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.1rem;
+      font-size: 0.8rem;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+
+    .story__subtitle {
+      font-size: 1.25rem;
+      margin: 6px 0;
+
+      @media (max-width: 1024px) {
+        & {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  &:hover figcaption {
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .story__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .story__button {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 30px;
+    transition: transform 0.3s;
+    transform: translateY(20%);
+    opacity: 0;
+    text-align: center;
+  }
+  &:hover .story__button {
+    transform: translateY(0%);
+    opacity: 1;
+    transition: transform 0.3s, opacity 0.5s;
+  }
+
+  .story__buttonlink {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    background: black;
+    opacity: 1;
+    font-size: 0.8rem;
+    position: relative;
+    padding: 15px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
 }
 </style>
