@@ -54,9 +54,12 @@ export default {
   mounted() {
     const $ul = document.querySelector('.js-slide ul');
     const slideCount = $ul.querySelectorAll('li').length;
-    for (let i = 0; i < slideCount - 1; i++) {
-      $ul.children[i].style.display = 'none';
-    }
+    // Safariはロード時に非表示だと画像が読み込まれないため100ms遅らせる
+    setTimeout(() => {
+      for (let i = 0; i < slideCount - 1; i++) {
+        $ul.children[i].style.display = 'none';
+      }
+    }, 100);
     setInterval(async () => {
       $ul.children[slideCount - 2].style.display = 'block';
       await this.$delay(1000);
