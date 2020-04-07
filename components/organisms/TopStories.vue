@@ -8,7 +8,7 @@
     </template>
     <template v-slot:content>
       <div class="wrapper">
-        <figure v-lazy:background-image="pic01">
+        <figure class="story01">
           <figcaption>
             <p class="story__title">
               Sea Sound
@@ -25,7 +25,7 @@
             </div>
           </a>
         </figure>
-        <figure v-lazy:background-image="pic02">
+        <figure class="story02">
           <figcaption style="color: black;">
             <p class="story__title">
               Living with Flowers
@@ -42,7 +42,7 @@
             </div>
           </a>
         </figure>
-        <figure v-lazy:background-image="pic03">
+        <figure class="story03">
           <figcaption>
             <p class="story__title">
               Kimono Culture
@@ -66,9 +66,6 @@
 </template>
 
 <script>
-import pic01 from '~/assets/images/pic_stories_01.jpg';
-import pic02 from '~/assets/images/pic_stories_02.jpg';
-import pic03 from '~/assets/images/pic_stories_03.jpg';
 import VSection from '@/components/molecules/VSection.vue';
 import VButton from '@/components/atoms/VButton.vue';
 
@@ -77,13 +74,6 @@ export default {
     VSection,
     VButton
   },
-  data() {
-    return {
-      pic01,
-      pic02,
-      pic03
-    };
-  }
 };
 </script>
 
@@ -100,6 +90,16 @@ figure {
   background-position: center;
   background-size: cover;
   overflow: hidden;
+
+  &.story01 {
+    background-image: url('~assets/images/pic_stories_01.jpg');
+  }
+  &.story02 {
+    background-image: url('~assets/images/pic_stories_02.jpg');
+  }
+  &.story03 {
+    background-image: url('~assets/images/pic_stories_03.jpg');
+  }
 
   figcaption {
     position: absolute;

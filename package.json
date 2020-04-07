@@ -16,8 +16,7 @@
   "dependencies": {
     "nuxt": "^2.12.2",
     "nuxt-webfontloader": "^1.1.0",
-    "vue-scrollto": "^2.17.1",
-    "vue-lazyload": "^1.3.3"
+    "vue-scrollto": "^2.17.1"
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.4.0",

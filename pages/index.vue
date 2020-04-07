@@ -4,10 +4,7 @@
     <div id="wrapper">
       <main>
         <TopAbout />
-        <TopStories
-          v-lazy:background-image="bgStories"
-          :class="$style.stories"
-        />
+        <TopStories :class="$style.stories" />
         <NewsArea :limit="4" />
       </main>
       <Footer />
@@ -55,5 +52,6 @@ export default {
 <style module lang="scss">
 .stories {
   background-color: #ddd;
+  background-image: url(~assets/images/bg_stories.png);
 }
 </style>
