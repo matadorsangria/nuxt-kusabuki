@@ -7,53 +7,53 @@
       Pickup Stories
     </template>
     <template v-slot:content>
-      <div :class="$style.wrapper">
-        <figure :class="$style.story01">
+      <div class="wrapper">
+        <figure lazy-background="~/assets/images/pic_stories_01.jpg">
           <figcaption>
-            <p :class="$style.story__title">
+            <p class="story__title">
               Sea Sound
             </p>
-            <p :class="$style.story__subtitle">
+            <p class="story__subtitle">
               before dark
             </p>
           </figcaption>
-          <a href="/stories#story01" :class="$style.story__link">
-            <div :class="$style.story__button">
-              <span :class="$style.story__buttonlink">
+          <a href="/stories#story01" class="story__link">
+            <div class="story__button">
+              <span class="story__buttonlink">
                 Show Detail
               </span>
             </div>
           </a>
         </figure>
-        <figure :class="$style.story02">
+        <figure lazy-background="~/assets/images/pic_stories_02.jpg">
           <figcaption style="color: black;">
-            <p :class="$style.story__title">
+            <p class="story__title">
               Living with Flowers
             </p>
-            <p :class="$style.story__subtitle">
+            <p class="story__subtitle">
               cluster amaryllises
             </p>
           </figcaption>
-          <a href="/stories#story02" :class="$style.story__link">
-            <div :class="$style.story__button">
-              <span :class="$style.story__buttonlink">
+          <a href="/stories#story02" class="story__link">
+            <div class="story__button">
+              <span class="story__buttonlink">
                 Show Detail
               </span>
             </div>
           </a>
         </figure>
-        <figure :class="$style.story03">
+        <figure lazy-background="~/assets/images/pic_stories_03.jpg">
           <figcaption>
-            <p :class="$style.story__title">
+            <p class="story__title">
               Kimono Culture
             </p>
-            <p :class="$style.story__subtitle">
+            <p class="story__subtitle">
               ohanami picnic
             </p>
           </figcaption>
-          <a href="/stories#story03" :class="$style.story__link">
-            <div :class="$style.story__button">
-              <span :class="$style.story__buttonlink">
+          <a href="/stories#story03" class="story__link">
+            <div class="story__button">
+              <span class="story__buttonlink">
                 Show Detail
               </span>
             </div>
@@ -77,7 +77,7 @@ export default {
 };
 </script>
 
-<style module lang="scss">
+<style scoped lang="scss">
 .wrapper {
   display: grid;
   margin-bottom: 40px;
@@ -85,28 +85,16 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 figure {
-  height: 400px;
+  position: relative;
+  height: 380px;
   background-position: center;
   background-size: cover;
   overflow: hidden;
-  transform: translateY(0);
+  opacity: 0;
+  transition: opacity 1s;
 
-  @media (max-width: 1024px) {
-    & {
-      height: 380px;
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  &.story01 {
-    background-image: url('~assets/images/pic_stories_01.jpg');
-  }
-  &.story02 {
-    background-image: url('~assets/images/pic_stories_02.jpg');
-  }
-  &.story03 {
-    background-image: url('~assets/images/pic_stories_03.jpg');
+  &.isLoaded {
+    opacity: 1;
   }
 
   figcaption {

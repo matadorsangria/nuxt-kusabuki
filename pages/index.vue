@@ -4,7 +4,10 @@
     <div id="wrapper">
       <main>
         <TopAbout />
-        <TopStories :class="$style.stories" />
+        <TopStories
+          :class="$style.stories"
+          lazy-background="~/assets/images/bg_stories.png"
+        />
         <NewsArea :limit="4" />
       </main>
       <Footer />
@@ -43,9 +46,8 @@ export default {
 }
 </style>
 
-<style module>
+<style module lang="scss">
 .stories {
   background-color: #ddd;
-  background-image: url(~assets/images/bg_stories.png);
 }
 </style>
