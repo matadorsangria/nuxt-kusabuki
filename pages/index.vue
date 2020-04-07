@@ -5,8 +5,8 @@
       <main>
         <TopAbout />
         <TopStories
+          v-lazy:background-image="bgStories"
           :class="$style.stories"
-          lazy-background="~/assets/images/bg_stories.png"
         />
         <NewsArea :limit="4" />
       </main>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import bgStories from '~/assets/images/bg_stories.png';
 import TopMainVisual from '@/components/organisms/TopMainVisual.vue';
 import TopAbout from '@/components/organisms/TopAbout.vue';
 import TopStories from '@/components/organisms/TopStories.vue';
@@ -30,6 +31,11 @@ export default {
     TopStories,
     NewsArea,
     Footer
+  },
+  data() {
+    return {
+      bgStories
+    };
   }
 };
 </script>

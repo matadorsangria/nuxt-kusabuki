@@ -3,7 +3,7 @@
     <a href="#" :class="$style.news__link" @click.prevent>
       <div :class="$style.news__figure">
         <img
-          :src="require(`~/assets/images/${data.image}`)"
+          v-lazy="require(`~/assets/images/${data.image}`)"
           alt=""
           :class="$style.news__image"
         />

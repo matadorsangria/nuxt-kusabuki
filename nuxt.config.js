@@ -18,7 +18,7 @@ module.exports = {
   },
   css: ['~/assets/css/main.scss'],
   plugins: ['~/plugins/mixin.js'],
-  modules: ['@nuxtjs/style-resources', 'nuxt-webfontloader', 'nuxt-lazy-load'],
+  modules: ['@nuxtjs/style-resources', 'nuxt-webfontloader'],
   webfontloader: {
     google: {
       families: ['Crimson+Pro', 'Noto+Serif+JP:wght@400;700']
