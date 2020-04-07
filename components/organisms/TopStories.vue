@@ -73,7 +73,7 @@ export default {
   components: {
     VSection,
     VButton
-  },
+  }
 };
 </script>
 
