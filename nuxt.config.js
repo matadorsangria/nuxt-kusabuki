@@ -24,9 +24,6 @@ module.exports = {
       families: ['Crimson+Pro', 'Noto+Serif+JP:wght@400;700']
     }
   },
-  server: {
-    host: '0.0.0.0' // default: localhost
-  },
   build: {
     extend(config, { isDev, isClient }) {
       config.performance.maxAssetSize = 300000;
