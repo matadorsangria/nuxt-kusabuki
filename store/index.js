@@ -53,7 +53,7 @@ export const state = () => ({
     },
     {
       id: 8,
-      label: 'shop',
+      label: 'event',
       title: '親子のための稲作体験',
       date: '2021.3.9',
       image: 'pic_news_05.jpg'
