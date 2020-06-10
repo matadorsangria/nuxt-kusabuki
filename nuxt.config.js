@@ -37,7 +37,7 @@ module.exports = {
       }
     }
   },
-  buildModules: ['@bazzite/nuxt-optimized-images'],
+  buildModules: ['@aceforth/nuxt-optimized-images'],
   optimizedImages: {
     optimizeImages: true
   }

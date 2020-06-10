@@ -12,16 +12,14 @@ module.exports = {
     'plugin:vue/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: [
-    'vue'
-  ],
+  plugins: ['vue'],
   rules: {
     'vue/max-attributes-per-line': 'off',
     'vue/html-self-closing': [
       'error',
       {
-        'html': {
-          'void': 'always',
+        html: {
+          void: 'always'
         }
       }
     ],
@@ -35,4 +33,4 @@ module.exports = {
       }
     ]
   }
-}
+};

@@ -16,21 +16,21 @@
   "dependencies": {
     "nuxt": "^2.12.2",
     "nuxt-webfontloader": "^1.1.0",
-    "vue-scrollto": "^2.17.1"
+    "vue-scrollto": "^2.18.1"
   },
   "devDependencies": {
-    "@bazzite/nuxt-optimized-images": "^0.4.0",
+    "@aceforth/nuxt-optimized-images": "^1.0.1",
     "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.1",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^4.0.0",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.2.2",
-    "imagemin-mozjpeg": "^8.0.0",
-    "node-sass": "^4.13.1",
-    "prettier": "^2.0.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
     "sass-loader": "^8.0.2"
   }
 }
