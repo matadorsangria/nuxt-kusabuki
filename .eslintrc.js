@@ -4,15 +4,10 @@ module.exports = {
     browser: true,
     node: true
   },
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
   extends: [
-    'eslint:recommended',
-    'plugin:vue/recommended',
+    'plugin:nuxt/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['vue'],
   rules: {
     'vue/max-attributes-per-line': 'off',
     'vue/html-self-closing': [
@@ -27,9 +22,6 @@ module.exports = {
       'warn',
       {
         singleQuote: true,
-        arrowParens: 'avoid',
-        trailingComma: 'none',
-        htmlWhitespaceSensitivity: 'ignore'
       }
     ]
   }
