@@ -214,8 +214,8 @@ export default {
   components: {
     Mainvisual,
     VSection,
-    SectionText
-  }
+    SectionText,
+  },
 };
 </script>
 

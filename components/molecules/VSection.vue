@@ -23,8 +23,8 @@ export default {
     titleTag: {
       required: false,
       type: String,
-      default: 'h2'
-    }
+      default: 'h2',
+    },
   },
   computed: {
     isTitleh1() {
@@ -32,8 +32,8 @@ export default {
     },
     isTitleh2() {
       return this.titleTag === 'h2';
-    }
-  }
+    },
+  },
 };
 </script>
 

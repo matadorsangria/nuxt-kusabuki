@@ -10,21 +10,21 @@ import NewsArticle from '@/components/molecules/NewsArticle.vue';
 
 export default {
   components: {
-    NewsArticle
+    NewsArticle,
   },
   props: {
     limit: {
       required: false,
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   computed: {
     ...mapState(['newsData']),
     filteredNewsData() {
       return this.limit ? this.newsData.slice(0, this.limit) : this.newsData;
-    }
-  }
+    },
+  },
 };
 </script>
 

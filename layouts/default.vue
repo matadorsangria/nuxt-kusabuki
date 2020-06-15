@@ -13,13 +13,13 @@ import Footer from '@/components/organisms/Footer.vue';
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   mounted() {
     const hash = this.$route.hash;
     if (hash && hash.match(/^#.+$/)) {
       this.$scrollTo(hash);
     }
-  }
+  },
 };
 </script>

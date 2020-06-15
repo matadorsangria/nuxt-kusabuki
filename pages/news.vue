@@ -14,7 +14,7 @@ import NewsArea from '@/components/organisms/NewsArea.vue';
 export default {
   components: {
     Mainvisual,
-    NewsArea
-  }
+    NewsArea,
+  },
 };
 </script>

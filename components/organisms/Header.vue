@@ -40,24 +40,24 @@ export default {
     page: {
       required: false,
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     ...mapState(['globalMenuOpen', 'headerBgActive']),
     isTop() {
       return this.page === 'top';
-    }
+    },
   },
   mounted() {
     if (this.isTop) {
       const mvObserver = new IntersectionObserver(
-        e => {
+        (e) => {
           this.setHeaderBgActive(!e[0].isIntersecting);
         },
         {
           root: null,
-          threshold: 0.25
+          threshold: 0.25,
         }
       );
       mvObserver.observe(document.querySelector('.js-slide'));
@@ -68,8 +68,8 @@ export default {
     switchGlobalMenu() {
       this.setGlobalMenuOpen(!this.globalMenuOpen);
       document.querySelector('body').classList.toggle('scroll-stop');
-    }
-  }
+    },
+  },
 };
 </script>
 

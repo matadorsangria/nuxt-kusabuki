@@ -10,13 +10,13 @@ export default {
     link: {
       required: false,
       type: String,
-      default: ''
+      default: '',
     },
     text: {
       required: true,
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 };
 </script>
 

@@ -46,8 +46,8 @@ import VButton from '@/components/atoms/VButton.vue';
 export default {
   components: {
     SectionText,
-    VButton
-  }
+    VButton,
+  },
 };
 </script>
 

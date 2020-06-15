@@ -24,9 +24,9 @@ export default {
   props: {
     data: {
       required: true,
-      type: Object
-    }
-  }
+      type: Object,
+    },
+  },
 };
 </script>
 

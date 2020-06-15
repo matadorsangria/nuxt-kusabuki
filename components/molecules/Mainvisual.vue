@@ -2,7 +2,7 @@
   <div
     :class="$style.mainvisual"
     :style="{
-      backgroundImage: `url(${require(`~/assets/images/${image}`)})`
+      backgroundImage: `url(${require(`~/assets/images/${image}`)})`,
     }"
   />
 </template>
@@ -12,9 +12,9 @@ export default {
   props: {
     image: {
       required: true,
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 };
 </script>
 

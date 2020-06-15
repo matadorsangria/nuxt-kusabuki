@@ -2,11 +2,11 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
     'plugin:nuxt/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   rules: {
     'vue/max-attributes-per-line': 'off',
@@ -14,15 +14,15 @@ module.exports = {
       'error',
       {
         html: {
-          void: 'always'
-        }
-      }
+          void: 'always',
+        },
+      },
     ],
     'prettier/prettier': [
       'warn',
       {
         singleQuote: true,
-      }
-    ]
-  }
+      },
+    ],
+  },
 };

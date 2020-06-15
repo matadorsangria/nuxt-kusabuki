@@ -26,13 +26,13 @@ import Header from '@/components/organisms/Header.vue';
 
 export default {
   components: {
-    Header
+    Header,
   },
   mounted() {
     let isLoaded = false;
     const $image = document.querySelector('.js-loading__image');
     const $separates = [
-      ...$image.querySelectorAll('.loading__image--separate')
+      ...$image.querySelectorAll('.loading__image--separate'),
     ];
     let count = $separates.length;
     let timer = setInterval(() => {
@@ -55,7 +55,7 @@ export default {
       }
     }, 80);
 
-    const promiseOnload = new Promise(resolve => {
+    const promiseOnload = new Promise((resolve) => {
       window.addEventListener('load', () => {
         resolve();
       });
@@ -70,7 +70,7 @@ export default {
       await this.$delay(1000);
       document.querySelector('.loading').remove();
     });
-  }
+  },
 };
 </script>
 

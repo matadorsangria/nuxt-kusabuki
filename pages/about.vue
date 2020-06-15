@@ -89,7 +89,7 @@ export default {
   components: {
     Mainvisual,
     VSection,
-    SectionText
+    SectionText,
   },
   mounted() {
     this.animation();
@@ -104,11 +104,11 @@ export default {
     animation() {
       const imgs = [...document.querySelectorAll('.js-photoFrame__img')];
       const clientRect = imgs[0].getBoundingClientRect();
-      imgs.forEach(el => {
+      imgs.forEach((el) => {
         el.style.transform = `matrix(1, 0, 0, 1, 0, ${-clientRect.top / 20})`;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -72,8 +72,8 @@ import VButton from '@/components/atoms/VButton.vue';
 export default {
   components: {
     VSection,
-    VButton
-  }
+    VButton,
+  },
 };
 </script>
 

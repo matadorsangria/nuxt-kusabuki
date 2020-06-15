@@ -48,7 +48,7 @@ export default {
       image01,
       image02,
       image03,
-      image04
+      image04,
     };
   },
   mounted() {
@@ -66,7 +66,7 @@ export default {
       $ul.insertBefore($ul.children[slideCount - 1], $ul.children[0]);
       $ul.children[0].style.display = 'none';
     }, 9000);
-  }
+  },
 };
 </script>
 

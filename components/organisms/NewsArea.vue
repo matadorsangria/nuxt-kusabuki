@@ -25,14 +25,14 @@ export default {
     VSection,
     NewsList,
     VButton,
-    Pager
+    Pager,
   },
   props: {
     limit: {
       required: false,
       type: Number,
-      default: 0
-    }
-  }
+      default: 0,
+    },
+  },
 };
 </script>

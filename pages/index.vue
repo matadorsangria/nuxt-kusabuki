@@ -27,13 +27,13 @@ export default {
     TopAbout,
     TopStories,
     NewsArea,
-    Footer
+    Footer,
   },
   data() {
     return {
-      bgStories
+      bgStories,
     };
-  }
+  },
 };
 </script>
 
