@@ -1,7 +1,9 @@
-module.exports = {
+import { Configuration } from '@nuxt/types';
+
+const nuxtConfig: Configuration = {
   mode: 'spa',
   head: {
-    title: 'kusabuki',
+    title: process.env.npm_package_name,
     htmlAttrs: {
       lang: 'ja',
     },
@@ -9,7 +11,11 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'robots', content: 'noindex, nofollow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: `${process.env.npm_package_description}`,
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -26,19 +32,23 @@ module.exports = {
   },
   build: {
     extend(config, { isDev, isClient }) {
-      config.performance.maxAssetSize = 300000;
+      if (config.performance) config.performance.maxAssetSize = 300000;
       if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        });
+        if (config.module) {
+          config.module.rules.push({
+            enforce: 'pre',
+            test: /\.(ts|js|vue)$/,
+            loader: 'eslint-loader',
+            exclude: /(node_modules)/,
+          });
+        }
       }
     },
   },
-  buildModules: ['@aceforth/nuxt-optimized-images'],
+  buildModules: ['@nuxt/typescript-build', '@aceforth/nuxt-optimized-images'],
   optimizedImages: {
     optimizeImages: true,
   },
 };
+
+module.exports = nuxtConfig;

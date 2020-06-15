@@ -1,3 +1,8 @@
+interface State {
+  globalMenuOpen: boolean;
+  headerBgActive: boolean;
+}
+
 export const state = () => ({
   globalMenuOpen: false,
   headerBgActive: true,
@@ -62,10 +67,10 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setGlobalMenuOpen(state, payload) {
-    state.globalMenuOpen = payload;
+  setGlobalMenuOpen(state: State, isOpen: boolean) {
+    state.globalMenuOpen = isOpen;
   },
-  setHeaderBgActive(state, payload) {
-    state.headerBgActive = payload;
-  }
+  setHeaderBgActive(state: State, isActive: boolean) {
+    state.headerBgActive = isActive;
+  },
 };
