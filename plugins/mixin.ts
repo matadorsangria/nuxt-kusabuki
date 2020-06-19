@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueScrollTo from 'vue-scrollto';
+import VueCompositionApi from '@vue/composition-api';
 
 Vue.use(VueScrollTo, {
   duration: 700,
@@ -14,3 +15,5 @@ Vue.mixin({
     },
   },
 });
+
+Vue.use(VueCompositionApi);

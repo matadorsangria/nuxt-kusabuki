@@ -20,14 +20,16 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@vue/composition-api';
+
+export default defineComponent({
   props: {
     data: {
       required: true,
       type: Object,
     },
   },
-};
+});
 </script>
 
 <style module>

@@ -18,7 +18,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@vue/composition-api';
+
+export default defineComponent({
   props: {
     titleTag: {
       required: false,
@@ -26,15 +28,13 @@ export default {
       default: 'h2',
     },
   },
-  computed: {
-    isTitleh1() {
-      return this.titleTag === 'h1';
-    },
-    isTitleh2() {
-      return this.titleTag === 'h2';
-    },
+  setup(props) {
+    const isTitleh1 = props.titleTag === 'h1';
+    const isTitleh2 = props.titleTag === 'h2';
+
+    return { isTitleh1, isTitleh2 };
   },
-};
+});
 </script>
 
 <style module>

@@ -206,17 +206,18 @@
 </template>
 
 <script>
+import { defineComponent } from '@vue/composition-api';
 import Mainvisual from '@/components/molecules/Mainvisual.vue';
 import VSection from '@/components/molecules/VSection.vue';
 import SectionText from '@/components/molecules/SectionText.vue';
 
-export default {
+export default defineComponent({
   components: {
     Mainvisual,
     VSection,
     SectionText,
   },
-};
+});
 </script>
 
 <style module lang="scss">

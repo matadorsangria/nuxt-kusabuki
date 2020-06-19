@@ -12,7 +12,7 @@ yarn start
 ```
 
 ## Development Tools
-- Nuxt.js (using Vuex)
+- Nuxt.js
 
 ## Design
 - Responsive Web Design

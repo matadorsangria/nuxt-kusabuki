@@ -23,7 +23,7 @@ const nuxtConfig: Configuration = {
     scss: ['~/assets/css/_variables.scss'],
   },
   css: ['~/assets/css/main.scss'],
-  plugins: ['~/plugins/mixin.ts'],
+  plugins: ['~/plugins/mixin'],
   modules: ['@nuxtjs/style-resources', 'nuxt-webfontloader'],
   webfontloader: {
     google: {

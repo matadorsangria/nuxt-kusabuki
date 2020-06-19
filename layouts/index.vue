@@ -22,56 +22,59 @@
 </template>
 
 <script>
+import { defineComponent, onMounted } from '@vue/composition-api';
 import Header from '@/components/organisms/Header.vue';
 
-export default {
+export default defineComponent({
   components: {
     Header,
   },
-  mounted() {
-    let isLoaded = false;
-    const $image = document.querySelector('.js-loading__image');
-    const $separates = [
-      ...$image.querySelectorAll('.loading__image--separate'),
-    ];
-    let count = $separates.length;
-    let timer = setInterval(() => {
-      const el = $separates[--count];
-      el.classList.add('is-hidden');
-      if (count === 0) {
-        clearInterval(timer);
-        if (isLoaded) return;
-        count = $separates.length;
-        timer = setInterval(async () => {
-          const el = $separates[--count];
-          el.classList.remove('is-hidden');
-          if (count === 0) {
-            clearInterval(timer);
-            if (isLoaded) return;
-            await this.$delay(1000);
-            $image.classList.add('spin');
-          }
-        }, 80);
-      }
-    }, 80);
+  setup(_props, ctx) {
+    onMounted(() => {
+      let isLoaded = false;
+      const $image = document.querySelector('.js-loading__image');
+      const $separates = [
+        ...$image.querySelectorAll('.loading__image--separate'),
+      ];
+      let count = $separates.length;
+      let timer = setInterval(() => {
+        const el = $separates[--count];
+        el.classList.add('is-hidden');
+        if (count === 0) {
+          clearInterval(timer);
+          if (isLoaded) return;
+          count = $separates.length;
+          timer = setInterval(async () => {
+            const el = $separates[--count];
+            el.classList.remove('is-hidden');
+            if (count === 0) {
+              clearInterval(timer);
+              if (isLoaded) return;
+              await ctx.root.$delay(1000);
+              $image.classList.add('spin');
+            }
+          }, 80);
+        }
+      }, 80);
 
-    const promiseOnload = new Promise((resolve) => {
-      window.addEventListener('load', () => {
-        resolve();
+      const promiseOnload = new Promise((resolve) => {
+        window.addEventListener('load', () => {
+          resolve();
+        });
+      });
+
+      const promiseLoading = Promise.resolve(ctx.root.$delay(860));
+
+      Promise.all([promiseOnload, promiseLoading]).then(async () => {
+        clearInterval(timer);
+        isLoaded = true;
+        document.querySelector('.loading').classList.add('loaded');
+        await ctx.root.$delay(1000);
+        document.querySelector('.loading').remove();
       });
     });
-
-    const promiseLoading = Promise.resolve(this.$delay(860));
-
-    Promise.all([promiseOnload, promiseLoading]).then(async () => {
-      clearInterval(timer);
-      isLoaded = true;
-      document.querySelector('.loading').classList.add('loaded');
-      await this.$delay(1000);
-      document.querySelector('.loading').remove();
-    });
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

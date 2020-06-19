@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@vue/composition-api';
+
+export default defineComponent({
   props: {
     link: {
       required: false,
@@ -17,7 +19,7 @@ export default {
       type: String,
     },
   },
-};
+});
 </script>
 
 <style module lang="scss">

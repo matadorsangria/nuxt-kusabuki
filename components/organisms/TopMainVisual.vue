@@ -37,12 +37,13 @@
 </template>
 
 <script>
+import { defineComponent, onMounted } from '@vue/composition-api';
 import image01 from '~/assets/images/mv_01.jpg';
 import image02 from '~/assets/images/mv_02.jpg';
 import image03 from '~/assets/images/mv_03.jpg';
 import image04 from '~/assets/images/mv_04.jpg';
 
-export default {
+export default defineComponent({
   data() {
     return {
       image01,
@@ -51,23 +52,25 @@ export default {
       image04,
     };
   },
-  mounted() {
-    const $ul = document.querySelector('.js-slide ul');
-    const slideCount = $ul.querySelectorAll('li').length;
-    // Safariはロード時に非表示だと画像が読み込まれないため100ms遅らせる
-    setTimeout(() => {
-      for (let i = 0; i < slideCount - 1; i++) {
-        $ul.children[i].style.display = 'none';
-      }
-    }, 100);
-    setInterval(async () => {
-      $ul.children[slideCount - 2].style.display = 'block';
-      await this.$delay(1000);
-      $ul.insertBefore($ul.children[slideCount - 1], $ul.children[0]);
-      $ul.children[0].style.display = 'none';
-    }, 9000);
+  setup(_props, ctx) {
+    onMounted(() => {
+      const $ul = document.querySelector('.js-slide ul');
+      const slideCount = $ul.querySelectorAll('li').length;
+      // Safariはロード時に非表示だと画像が読み込まれないため100ms遅らせる
+      setTimeout(() => {
+        for (let i = 0; i < slideCount - 1; i++) {
+          $ul.children[i].style.display = 'none';
+        }
+      }, 100);
+      setInterval(async () => {
+        $ul.children[slideCount - 2].style.display = 'block';
+        await ctx.root.$delay(1000);
+        $ul.insertBefore($ul.children[slideCount - 1], $ul.children[0]);
+        $ul.children[0].style.display = 'none';
+      }, 9000);
+    });
   },
-};
+});
 </script>
 
 <style module lang="scss">

@@ -15,12 +15,13 @@
 </template>
 
 <script>
+import { defineComponent } from '@vue/composition-api';
 import VSection from '@/components/molecules/VSection.vue';
 import NewsList from '@/components/molecules/NewsList.vue';
 import VButton from '@/components/atoms/VButton.vue';
 import Pager from '@/components/atoms/Pager.vue';
 
-export default {
+export default defineComponent({
   components: {
     VSection,
     NewsList,
@@ -34,5 +35,5 @@ export default {
       default: 0,
     },
   },
-};
+});
 </script>

@@ -8,13 +8,14 @@
 </template>
 
 <script>
+import { defineComponent } from '@vue/composition-api';
 import Mainvisual from '@/components/molecules/Mainvisual.vue';
 import NewsArea from '@/components/organisms/NewsArea.vue';
 
-export default {
+export default defineComponent({
   components: {
     Mainvisual,
     NewsArea,
   },
-};
+});
 </script>

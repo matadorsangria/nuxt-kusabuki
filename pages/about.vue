@@ -81,35 +81,39 @@
 </template>
 
 <script>
+import { defineComponent, onMounted } from '@vue/composition-api';
 import Mainvisual from '@/components/molecules/Mainvisual.vue';
 import VSection from '@/components/molecules/VSection.vue';
 import SectionText from '@/components/molecules/SectionText.vue';
 
-export default {
+export default defineComponent({
   components: {
     Mainvisual,
     VSection,
     SectionText,
   },
-  mounted() {
-    this.animation();
-    document.addEventListener('scroll', () => {
-      this.animation();
-    });
-    document.addEventListener('touchmove', () => {
-      this.animation();
-    });
-  },
-  methods: {
-    animation() {
+  setup() {
+    const animation = () => {
       const imgs = [...document.querySelectorAll('.js-photoFrame__img')];
       const clientRect = imgs[0].getBoundingClientRect();
       imgs.forEach((el) => {
         el.style.transform = `matrix(1, 0, 0, 1, 0, ${-clientRect.top / 20})`;
       });
-    },
+    };
+
+    onMounted(() => {
+      animation();
+      document.addEventListener('scroll', () => {
+        animation();
+      });
+      document.addEventListener('touchmove', () => {
+        animation();
+      });
+    });
+
+    return { animation };
   },
-};
+});
 </script>
 
 <style module lang="scss">

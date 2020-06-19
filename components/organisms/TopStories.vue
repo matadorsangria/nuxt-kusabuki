@@ -66,15 +66,16 @@
 </template>
 
 <script>
+import { defineComponent } from '@vue/composition-api';
 import VSection from '@/components/molecules/VSection.vue';
 import VButton from '@/components/atoms/VButton.vue';
 
-export default {
+export default defineComponent({
   components: {
     VSection,
     VButton,
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

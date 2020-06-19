@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import bgStories from '~/assets/images/bg_stories.png';
+import { defineComponent } from '@vue/composition-api';
 import TopMainVisual from '@/components/organisms/TopMainVisual.vue';
 import TopAbout from '@/components/organisms/TopAbout.vue';
 import TopStories from '@/components/organisms/TopStories.vue';
 import NewsArea from '@/components/organisms/NewsArea.vue';
 import Footer from '@/components/organisms/Footer.vue';
 
-export default {
+export default defineComponent({
   layout: 'index',
   components: {
     TopMainVisual,
@@ -29,12 +29,7 @@ export default {
     NewsArea,
     Footer,
   },
-  data() {
-    return {
-      bgStories,
-    };
-  },
-};
+});
 </script>
 
 <style>

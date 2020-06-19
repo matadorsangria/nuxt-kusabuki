@@ -40,15 +40,16 @@
 </template>
 
 <script>
+import { defineComponent } from '@vue/composition-api';
 import SectionText from '@/components/molecules/SectionText.vue';
 import VButton from '@/components/atoms/VButton.vue';
 
-export default {
+export default defineComponent({
   components: {
     SectionText,
     VButton,
   },
-};
+});
 </script>
 
 <style module>

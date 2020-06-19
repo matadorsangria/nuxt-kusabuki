@@ -1,8 +1,8 @@
 <template>
-  <header id="header" :class="{ 'is-open': globalMenuOpen }">
+  <header id="header" :class="{ 'is-open': state.globalMenuOpen }">
     <div
       class="header__bg"
-      :class="{ 'is-active': !isTop || headerBgActive }"
+      :class="{ 'is-active': !isTop || state.headerBgActive }"
     />
     <p class="header__logo">
       <a href="/">
@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { defineComponent, reactive, onMounted } from '@vue/composition-api';
 
-export default {
+export default defineComponent({
   props: {
     page: {
       required: false,
@@ -43,34 +43,41 @@ export default {
       default: '',
     },
   },
-  computed: {
-    ...mapState(['globalMenuOpen', 'headerBgActive']),
-    isTop() {
-      return this.page === 'top';
-    },
-  },
-  mounted() {
-    if (this.isTop) {
-      const mvObserver = new IntersectionObserver(
-        (e) => {
-          this.setHeaderBgActive(!e[0].isIntersecting);
-        },
-        {
-          root: null,
-          threshold: 0.25,
-        }
-      );
-      mvObserver.observe(document.querySelector('.js-slide'));
-    }
-  },
-  methods: {
-    ...mapMutations(['setGlobalMenuOpen', 'setHeaderBgActive']),
-    switchGlobalMenu() {
-      this.setGlobalMenuOpen(!this.globalMenuOpen);
+  setup(props) {
+    const state = reactive({
+      globalMenuOpen: false,
+      headerBgActive: true,
+    });
+    const setGlobalMenuOpen = (isOpen) => {
+      state.globalMenuOpen = isOpen;
+    };
+    const setHeaderBgActive = (isActive) => {
+      state.headerBgActive = isActive;
+    };
+    const isTop = props.isTop === 'top';
+    const switchGlobalMenu = () => {
+      setGlobalMenuOpen(!state.globalMenuOpen);
       document.querySelector('body').classList.toggle('scroll-stop');
-    },
+    };
+
+    onMounted(() => {
+      if (isTop) {
+        const mvObserver = new IntersectionObserver(
+          (e) => {
+            setHeaderBgActive(!e[0].isIntersecting);
+          },
+          {
+            root: null,
+            threshold: 0.25,
+          }
+        );
+        mvObserver.observe(document.querySelector('.js-slide'));
+      }
+    });
+
+    return { state, isTop, switchGlobalMenu };
   },
-};
+});
 </script>
 
 <style scoped lang="scss">
