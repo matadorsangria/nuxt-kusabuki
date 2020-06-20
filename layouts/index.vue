@@ -32,6 +32,7 @@ export default defineComponent({
   setup(_props, ctx) {
     onMounted(() => {
       let isLoaded = false;
+      const delay = ctx.root.$delay;
       const $image = document.querySelector('.js-loading__image');
       const $separates = [
         ...$image.querySelectorAll('.loading__image--separate'),
@@ -50,7 +51,7 @@ export default defineComponent({
             if (count === 0) {
               clearInterval(timer);
               if (isLoaded) return;
-              await ctx.root.$delay(1000);
+              await delay(1000);
               $image.classList.add('spin');
             }
           }, 80);
@@ -63,13 +64,13 @@ export default defineComponent({
         });
       });
 
-      const promiseLoading = Promise.resolve(ctx.root.$delay(860));
+      const promiseLoading = Promise.resolve(delay(860));
 
       Promise.all([promiseOnload, promiseLoading]).then(async () => {
         clearInterval(timer);
         isLoaded = true;
         document.querySelector('.loading').classList.add('loaded');
-        await ctx.root.$delay(1000);
+        await delay(1000);
         document.querySelector('.loading').remove();
       });
     });

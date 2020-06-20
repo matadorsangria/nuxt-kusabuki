@@ -54,6 +54,7 @@ export default defineComponent({
   },
   setup(_props, ctx) {
     onMounted(() => {
+      const delay = ctx.root.$delay;
       const $ul = document.querySelector('.js-slide ul');
       const slideCount = $ul.querySelectorAll('li').length;
       // Safariはロード時に非表示だと画像が読み込まれないため100ms遅らせる
@@ -64,7 +65,7 @@ export default defineComponent({
       }, 100);
       setInterval(async () => {
         $ul.children[slideCount - 2].style.display = 'block';
-        await ctx.root.$delay(1000);
+        await delay(1000);
         $ul.insertBefore($ul.children[slideCount - 1], $ul.children[0]);
         $ul.children[0].style.display = 'none';
       }, 9000);
