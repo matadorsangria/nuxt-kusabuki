@@ -22,10 +22,10 @@
         <li><a href="/stories">STORIES</a></li>
         <li><a href="/news">NEWS</a></li>
         <li>
-          <a href="/locations" @click.prevent>LOCATIONS</a>
+          <a href="/" @click.prevent>LOCATIONS</a>
         </li>
         <li>
-          <a href="/contact" @click.prevent>CONTACT</a>
+          <a href="/" @click.prevent>CONTACT</a>
         </li>
       </ul>
     </nav>

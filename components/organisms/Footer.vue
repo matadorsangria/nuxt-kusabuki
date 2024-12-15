@@ -20,13 +20,13 @@
     <ul class="links">
       <li><a href="/news">お知らせ</a></li>
       <li>
-        <a href="/access" @click.prevent>アクセス</a>
+        <a href="/" @click.prevent>アクセス</a>
       </li>
       <li>
-        <a href="/contact" @click.prevent>お問い合わせ</a>
+        <a href="/" @click.prevent>お問い合わせ</a>
       </li>
       <li>
-        <a href="/privacypolicy" @click.prevent>プライバシーポリシー</a>
+        <a href="/" @click.prevent>プライバシーポリシー</a>
       </li>
       <li>
         <a href="https://kusabikifc.org" @click.prevent>
