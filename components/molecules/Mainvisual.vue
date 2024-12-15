@@ -1,35 +1,25 @@
 <template>
-  <div
-    :class="$style.mainvisual"
-    :style="{
-      backgroundImage: `url(${require(`~/assets/images/${image}`)})`,
-    }"
-  />
+  <div :class="$style.mainvisual"><nuxt-img :src="`/images/${image}`" /></div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
-
-export default defineComponent({
-  props: {
-    image: {
-      required: true,
-      type: String,
-    },
-  },
-});
+<script setup lang="ts">
+defineProps<{
+  image: string;
+}>();
 </script>
 
-<style module>
+<style module lang="scss">
 .mainvisual {
   width: 100%;
   height: 80px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-@media (min-width: 678px) {
-  .mainvisual {
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  @media (min-width: 678px) {
     height: 120px;
   }
 }

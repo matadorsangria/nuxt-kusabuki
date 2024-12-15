@@ -2,10 +2,10 @@
   <div :class="$style.about">
     <section :class="$style.about__inner">
       <SectionText :class="$style.about__text">
-        <template v-slot:title>
+        <template #title>
           草吹町について
         </template>
-        <template v-slot:content>
+        <template #content>
           <p>
             三方を山に囲まれ東側を海に面した草吹町は、気候も温暖で過ごしやすく、古くから花卉の生産地として栄えてきました。
             <br />
@@ -17,10 +17,10 @@
         </template>
       </SectionText>
       <SectionText :class="$style.about__text">
-        <template v-slot:title>
+        <template #title>
           About Kusabuki town
         </template>
-        <template v-slot:content>
+        <template #content>
           <p>
             Kusabuki is surrounded by mountains on three sides with the east
             side facing the sea and has a warm and comfortable climate. The town
@@ -39,17 +39,9 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
+<script setup lang="ts">
 import SectionText from '@/components/molecules/SectionText.vue';
 import VButton from '@/components/atoms/VButton.vue';
-
-export default defineComponent({
-  components: {
-    SectionText,
-    VButton,
-  },
-});
 </script>
 
 <style module>

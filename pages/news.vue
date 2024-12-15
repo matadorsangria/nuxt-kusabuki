@@ -7,15 +7,7 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
+<script setup lang="ts">
 import Mainvisual from '@/components/molecules/Mainvisual.vue';
 import NewsArea from '@/components/organisms/NewsArea.vue';
-
-export default defineComponent({
-  components: {
-    Mainvisual,
-    NewsArea,
-  },
-});
 </script>

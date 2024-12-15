@@ -5,35 +5,35 @@
   "author": "matadorsangria",
   "private": true,
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts build && nuxt-ts start",
-    "generate": "nuxt-ts generate",
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
     "check-types": "tsc",
-    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "precommit": "yarn lint"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^0.4.10",
-    "@vue/composition-api": "^0.6.5",
-    "nuxt": "^2.13.0",
-    "nuxt-webfontloader": "^1.1.0",
-    "vue-scrollto": "^2.18.1"
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "nuxt": "^3.14.1592"
   },
   "devDependencies": {
-    "@aceforth/nuxt-optimized-images": "^1.0.1",
-    "@nuxt/typescript-build": "^1.0.3",
-    "@nuxtjs/eslint-config-typescript": "^2.0.0",
-    "@nuxtjs/style-resources": "^1.0.0",
-    "eslint": "^7.3.0",
-    "eslint-config-prettier": "^6.11.0",
+    "@nuxt/eslint-config": "^0.7.3",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-nuxt": "^1.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "imagemin-mozjpeg": "^9.0.0",
-    "node-sass": "^4.14.1",
-    "prettier": "^2.0.5",
-    "sass-loader": "^8.0.2"
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.13.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "prettier": "^3.4.2",
+    "sass": "^1.83.0",
+    "sass-loader": "^16.0.4",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
   }
 }

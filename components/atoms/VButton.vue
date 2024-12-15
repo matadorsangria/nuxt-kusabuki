@@ -4,21 +4,12 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
-
-export default defineComponent({
-  props: {
-    link: {
-      required: false,
-      type: String,
-      default: '',
-    },
-    text: {
-      required: true,
-      type: String,
-    },
-  },
+<script setup lang="ts">
+withDefaults(defineProps<{
+  text: string
+  link?: string
+}>(), {
+  link: ''
 });
 </script>
 

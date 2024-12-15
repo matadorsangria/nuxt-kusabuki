@@ -1,12 +1,12 @@
 <template>
   <VSection>
-    <template v-slot:labelSub>
+    <template #labelSub>
       お知らせ
     </template>
-    <template v-slot:labelMain>
+    <template #labelMain>
       News
     </template>
-    <template v-slot:content>
+    <template #content>
       <NewsList :limit="limit" />
       <VButton v-if="limit" link="/news" text="Read More" />
       <Pager v-else />
@@ -14,26 +14,15 @@
   </VSection>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
+<script setup lang="ts">
 import VSection from '@/components/molecules/VSection.vue';
 import NewsList from '@/components/molecules/NewsList.vue';
 import VButton from '@/components/atoms/VButton.vue';
 import Pager from '@/components/atoms/Pager.vue';
 
-export default defineComponent({
-  components: {
-    VSection,
-    NewsList,
-    VButton,
-    Pager,
-  },
-  props: {
-    limit: {
-      required: false,
-      type: Number,
-      default: 0,
-    },
-  },
+withDefaults(defineProps<{
+  limit?: number
+}>(), {
+  limit: 0
 });
 </script>

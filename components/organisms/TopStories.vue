@@ -1,12 +1,12 @@
 <template>
   <VSection>
-    <template v-slot:labelSub>
+    <template #labelSub>
       ストーリー
     </template>
-    <template v-slot:labelMain>
+    <template #labelMain>
       Pickup Stories
     </template>
-    <template v-slot:content>
+    <template #content>
       <div class="wrapper">
         <figure class="story01">
           <figcaption>
@@ -65,17 +65,9 @@
   </VSection>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
+<script setup lang="ts">
 import VSection from '@/components/molecules/VSection.vue';
 import VButton from '@/components/atoms/VButton.vue';
-
-export default defineComponent({
-  components: {
-    VSection,
-    VButton,
-  },
-});
 </script>
 
 <style scoped lang="scss">
@@ -93,13 +85,13 @@ figure {
   overflow: hidden;
 
   &.story01 {
-    background-image: url('~assets/images/pic_stories_01.jpg');
+    background-image: url('~/assets/images/pic_stories_01.jpg');
   }
   &.story02 {
-    background-image: url('~assets/images/pic_stories_02.jpg');
+    background-image: url('~/assets/images/pic_stories_02.jpg');
   }
   &.story03 {
-    background-image: url('~assets/images/pic_stories_03.jpg');
+    background-image: url('~/assets/images/pic_stories_03.jpg');
   }
 
   figcaption {

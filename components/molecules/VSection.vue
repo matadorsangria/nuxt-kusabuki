@@ -17,24 +17,15 @@
   </section>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
-
-export default defineComponent({
-  props: {
-    titleTag: {
-      required: false,
-      type: String,
-      default: 'h2',
-    },
-  },
-  setup(props) {
-    const isTitleh1 = props.titleTag === 'h1';
-    const isTitleh2 = props.titleTag === 'h2';
-
-    return { isTitleh1, isTitleh2 };
-  },
+<script setup lang="ts">
+const props = withDefaults(defineProps<{
+  titleTag?: string
+}>(), {
+  titleTag: 'h2'
 });
+
+const isTitleh1 = props.titleTag === 'h1';
+const isTitleh2 = props.titleTag === 'h2';
 </script>
 
 <style module>

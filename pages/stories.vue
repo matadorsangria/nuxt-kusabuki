@@ -2,19 +2,19 @@
   <div id="content">
     <Mainvisual image="pic_second_03.jpg" />
     <VSection title-tag="h1">
-      <template v-slot:labelSub>
+      <template #labelSub>
         ストーリー
       </template>
-      <template v-slot:labelMain>
+      <template #labelMain>
         Pickup Stories
       </template>
-      <template v-slot:content>
+      <template #content>
         <SectionText id="story01">
-          <template v-slot:title>
+          <template #title>
             海の音色を聴く
             <span :class="$style.subtitle">− Sea Sound −</span>
           </template>
-          <template v-slot:content>
+          <template #content>
             <div :class="$style.textWrap">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -60,11 +60,11 @@
           </template>
         </SectionText>
         <SectionText id="story02">
-          <template v-slot:title>
+          <template #title>
             花とともにある暮らし
             <span :class="$style.subtitle">− Living with flowers −</span>
           </template>
-          <template v-slot:content>
+          <template #content>
             <div :class="$style.textWrap">
               <p>
                 Volutpat lacus laoreet non curabitur gravida arcu. Magna eget
@@ -116,11 +116,11 @@
           </template>
         </SectionText>
         <SectionText id="story03">
-          <template v-slot:title>
+          <template #title>
             着物文化が根付く町
             <span :class="$style.subtitle">− Kimono Culture −</span>
           </template>
-          <template v-slot:content>
+          <template #content>
             <div :class="$style.textWrap">
               <p>
                 Mattis vulputate enim nulla aliquet porttitor lacus luctus
@@ -205,19 +205,10 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
+<script setup lang="ts">
 import Mainvisual from '@/components/molecules/Mainvisual.vue';
 import VSection from '@/components/molecules/VSection.vue';
 import SectionText from '@/components/molecules/SectionText.vue';
-
-export default defineComponent({
-  components: {
-    Mainvisual,
-    VSection,
-    SectionText,
-  },
-});
 </script>
 
 <style module lang="scss">
@@ -251,13 +242,13 @@ export default defineComponent({
   color: #fff;
 }
 .imageWrap01 {
-  background-image: url('~assets/images/pic_stories_01.jpg');
+  background-image: url('~/assets/images/pic_stories_01.jpg');
 }
 .imageWrap02 {
-  background-image: url('~assets/images/pic_stories_02.jpg');
+  background-image: url('~/assets/images/pic_stories_02.jpg');
 }
 .imageWrap03 {
-  background-image: url('~assets/images/pic_stories_03.jpg');
+  background-image: url('~/assets/images/pic_stories_03.jpg');
 }
 .imageWrap__inner {
   padding: 0 30px;

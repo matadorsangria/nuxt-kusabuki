@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <Header page="top" />
-    <nuxt />
+    <slot />
     <div class="loading">
       <div class="loading__main">
         <div class="loading__image js-loading__image">
@@ -21,60 +21,41 @@
   </div>
 </template>
 
-<script>
-import { defineComponent, onMounted } from '@vue/composition-api';
+<script setup lang="ts">
+import { delay } from '~/assets/js/utils/delay';
 import Header from '@/components/organisms/Header.vue';
 
-export default defineComponent({
-  components: {
-    Header,
-  },
-  setup(_props, ctx) {
-    onMounted(() => {
-      let isLoaded = false;
-      const delay = ctx.root.$delay;
-      const $image = document.querySelector('.js-loading__image');
-      const $separates = [
-        ...$image.querySelectorAll('.loading__image--separate'),
-      ];
-      let count = $separates.length;
-      let timer = setInterval(() => {
+onMounted(async () => {
+  let isLoaded = false;
+  const $image = document.querySelector('.js-loading__image') as HTMLDivElement;
+  const $separates = Array.from($image.querySelectorAll('.loading__image--separate'));
+  let count = $separates.length;
+  let timer = setInterval(() => {
+    const el = $separates[--count];
+    el.classList.add('is-hidden');
+    if (count === 0) {
+      clearInterval(timer);
+      if (isLoaded) return;
+      count = $separates.length;
+      timer = setInterval(async () => {
         const el = $separates[--count];
-        el.classList.add('is-hidden');
+        el.classList.remove('is-hidden');
         if (count === 0) {
           clearInterval(timer);
           if (isLoaded) return;
-          count = $separates.length;
-          timer = setInterval(async () => {
-            const el = $separates[--count];
-            el.classList.remove('is-hidden');
-            if (count === 0) {
-              clearInterval(timer);
-              if (isLoaded) return;
-              await delay(1000);
-              $image.classList.add('spin');
-            }
-          }, 80);
+          await delay(1000);
+          $image.classList.add('spin');
         }
       }, 80);
+    }
+  }, 80);
 
-      const promiseOnload = new Promise((resolve) => {
-        window.addEventListener('load', () => {
-          resolve();
-        });
-      });
-
-      const promiseLoading = Promise.resolve(delay(860));
-
-      Promise.all([promiseOnload, promiseLoading]).then(async () => {
-        clearInterval(timer);
-        isLoaded = true;
-        document.querySelector('.loading').classList.add('loaded');
-        await delay(1000);
-        document.querySelector('.loading').remove();
-      });
-    });
-  },
+  await delay(860);
+  clearInterval(timer);
+  isLoaded = true;
+  document.querySelector('.loading')?.classList.add('loaded');
+  await delay(1000);
+  document.querySelector('.loading')?.remove();
 });
 </script>
 

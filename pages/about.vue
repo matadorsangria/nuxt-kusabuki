@@ -2,19 +2,19 @@
   <div id="content">
     <Mainvisual image="pic_second_01.jpg" />
     <VSection title-tag="h1">
-      <template v-slot:labelSub>
+      <template #labelSub>
         草吹町について
       </template>
-      <template v-slot:labelMain>
+      <template #labelMain>
         About Kusabuki town
       </template>
-      <template v-slot:content>
+      <template #content>
         <div :class="$style.wrapper">
           <SectionText>
-            <template v-slot:title>
+            <template #title>
               草吹の魅力
             </template>
-            <template v-slot:content>
+            <template #content>
               <p>
                 雨ニモマケズ 風ニモマケズ
                 <br />
@@ -34,10 +34,10 @@
           </div>
           <div :class="$style.photoFrame__after">
             <SectionText>
-              <template v-slot:title>
+              <template #title>
                 豊かな自然と守り抜かれた文化
               </template>
-              <template v-slot:content>
+              <template #content>
                 <p>
                   一日ニ玄米四合ト 味噌ト少シノ野菜ヲタベ
                   <br />
@@ -59,12 +59,12 @@
             </SectionText>
           </div>
           <SectionText>
-            <template v-slot:title>
+            <template #title>
               不自由さを受け入れ
               <br />
               人間らしさを取り戻す
             </template>
-            <template v-slot:content>
+            <template #content>
               <p>
                 ヒドリノトキハナミダヲナガシ サムサノナツハオロオロアルキ
                 <br />
@@ -80,39 +80,27 @@
   </div>
 </template>
 
-<script>
-import { defineComponent, onMounted } from '@vue/composition-api';
+<script setup lang="ts">
 import Mainvisual from '@/components/molecules/Mainvisual.vue';
 import VSection from '@/components/molecules/VSection.vue';
 import SectionText from '@/components/molecules/SectionText.vue';
 
-export default defineComponent({
-  components: {
-    Mainvisual,
-    VSection,
-    SectionText,
-  },
-  setup() {
-    const animation = () => {
-      const imgs = [...document.querySelectorAll('.js-photoFrame__img')];
-      const clientRect = imgs[0].getBoundingClientRect();
-      imgs.forEach((el) => {
-        el.style.transform = `matrix(1, 0, 0, 1, 0, ${-clientRect.top / 20})`;
-      });
-    };
+const animation = () => {
+  const imgs = Array.from(document.querySelectorAll('.js-photoFrame__img')) as HTMLDivElement[];
+  const clientRect = imgs[0].getBoundingClientRect();
+  imgs.forEach((el) => {
+    el.style.transform = `matrix(1, 0, 0, 1, 0, ${-clientRect.top / 20})`;
+  });
+};
 
-    onMounted(() => {
-      animation();
-      document.addEventListener('scroll', () => {
-        animation();
-      });
-      document.addEventListener('touchmove', () => {
-        animation();
-      });
-    });
-
-    return { animation };
-  },
+onMounted(() => {
+  animation();
+  document.addEventListener('scroll', () => {
+    animation();
+  });
+  document.addEventListener('touchmove', () => {
+    animation();
+  });
 });
 </script>
 
@@ -163,10 +151,10 @@ $zindex-photoFrameRgt: 10;
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 .photoFrame__lft .photoFrame__img {
-  background-image: url(~assets/images/pic_second_sub_02.jpg);
+  background-image: url(~/assets/images/pic_second_sub_02.jpg);
 }
 .photoFrame__rgt .photoFrame__img {
-  background-image: url(~assets/images/pic_second_sub_01.jpg);
+  background-image: url(~/assets/images/pic_second_sub_01.jpg);
 }
 
 .photoFrame__wrap .content {

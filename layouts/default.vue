@@ -1,28 +1,19 @@
 <template>
   <div id="container">
     <Header />
-    <nuxt />
+    <slot />
     <Footer />
   </div>
 </template>
 
-<script>
-import { defineComponent, onMounted } from '@vue/composition-api';
+<script setup lang="ts">
 import Header from '@/components/organisms/Header.vue';
 import Footer from '@/components/organisms/Footer.vue';
 
-export default defineComponent({
-  components: {
-    Header,
-    Footer,
-  },
-  setup(_props, ctx) {
-    onMounted(() => {
-      const hash = ctx.root._route.hash;
-      if (hash && hash.match(/^#.+$/)) {
-        ctx.root.$scrollTo(hash);
-      }
-    });
-  },
+onMounted(() => {
+  // const hash = ctx.root._route.hash;
+  // if (hash && hash.match(/^#.+$/)) {
+  //   ctx.root.$scrollTo(hash);
+  // }
 });
 </script>

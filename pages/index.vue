@@ -12,24 +12,17 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
+<script setup lang="ts">
 import TopMainVisual from '@/components/organisms/TopMainVisual.vue';
 import TopAbout from '@/components/organisms/TopAbout.vue';
 import TopStories from '@/components/organisms/TopStories.vue';
 import NewsArea from '@/components/organisms/NewsArea.vue';
 import Footer from '@/components/organisms/Footer.vue';
 
-export default defineComponent({
-  layout: 'index',
-  components: {
-    TopMainVisual,
-    TopAbout,
-    TopStories,
-    NewsArea,
-    Footer,
-  },
-});
+// eslint-disable-next-line no-undef
+definePageMeta({
+  layout: 'top',
+})
 </script>
 
 <style>
@@ -47,6 +40,6 @@ export default defineComponent({
 <style module lang="scss">
 .stories {
   background-color: #ddd;
-  background-image: url(~assets/images/bg_stories.png);
+  background-image: url('~/assets/images/bg_stories.png');
 }
 </style>

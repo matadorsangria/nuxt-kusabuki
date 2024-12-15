@@ -32,51 +32,42 @@
   </header>
 </template>
 
-<script>
-import { defineComponent, reactive, onMounted } from '@vue/composition-api';
+<script setup lang="ts">
+const props = withDefaults(defineProps<{
+  page?: string
+}>(), {
+  page: ''
+});
 
-export default defineComponent({
-  props: {
-    page: {
-      required: false,
-      type: String,
-      default: '',
-    },
-  },
-  setup(props) {
-    const state = reactive({
-      globalMenuOpen: false,
-      headerBgActive: true,
-    });
-    const setGlobalMenuOpen = (isOpen) => {
-      state.globalMenuOpen = isOpen;
-    };
-    const setHeaderBgActive = (isActive) => {
-      state.headerBgActive = isActive;
-    };
-    const isTop = props.isTop === 'top';
-    const switchGlobalMenu = () => {
-      setGlobalMenuOpen(!state.globalMenuOpen);
-      document.querySelector('body').classList.toggle('scroll-stop');
-    };
+const state = reactive({
+  globalMenuOpen: false,
+  headerBgActive: true,
+});
+const setGlobalMenuOpen = (isOpen: boolean) => {
+  state.globalMenuOpen = isOpen;
+};
+const setHeaderBgActive = (isActive: boolean) => {
+  state.headerBgActive = isActive;
+};
+const isTop = props.page === 'top';
+const switchGlobalMenu = () => {
+  setGlobalMenuOpen(!state.globalMenuOpen);
+  document.querySelector('body')?.classList.toggle('scroll-stop');
+};
 
-    onMounted(() => {
-      if (isTop) {
-        const mvObserver = new IntersectionObserver(
-          (e) => {
-            setHeaderBgActive(!e[0].isIntersecting);
-          },
-          {
-            root: null,
-            threshold: 0.25,
-          }
-        );
-        mvObserver.observe(document.querySelector('.js-slide'));
+onMounted(() => {
+  if (isTop) {
+    const mvObserver = new IntersectionObserver(
+      (e) => {
+        setHeaderBgActive(!e[0].isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0.25,
       }
-    });
-
-    return { state, isTop, switchGlobalMenu };
-  },
+    );
+    mvObserver.observe(document.querySelector('.js-slide') as HTMLDivElement);
+  }
 });
 </script>
 

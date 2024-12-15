@@ -2,34 +2,26 @@
   <article class="card has-button third bottom order-1">
     <a href="#" :class="$style.news__link" @click.prevent>
       <div :class="$style.news__figure">
-        <img
-          :src="require(`~/assets/images/${data.image}`)"
-          alt=""
-          :class="$style.news__image"
-        />
-        <p :class="[$style.news__label, $style[`is-${data.label}`]]">
-          {{ data.label.toUpperCase() }}
+        <nuxt-img :src="`/images/${image}`" alt="" :class="$style.news__image" />
+        <p :class="[$style.news__label, $style[`is-${label}`]]">
+          {{ label.toUpperCase() }}
         </p>
       </div>
       <div :class="$style.news__caption">
-        <p :class="$style.news__title">{{ data.title }}</p>
-        <p :class="$style.news__date">{{ data.date }}</p>
+        <p :class="$style.news__title">{{ title }}</p>
+        <p :class="$style.news__date">{{ date }}</p>
       </div>
     </a>
   </article>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api';
-
-export default defineComponent({
-  props: {
-    data: {
-      required: true,
-      type: Object,
-    },
-  },
-});
+<script setup lang="ts">
+defineProps<{
+  title: string,
+  label: string,
+  image: string,
+  date: string,
+}>();
 </script>
 
 <style module>
