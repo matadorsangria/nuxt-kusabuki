@@ -102,6 +102,10 @@ onMounted(() => {
     animation();
   });
 });
+
+useHead({
+  title: 'About Kusabuki town',
+});
 </script>
 
 <style module lang="scss">

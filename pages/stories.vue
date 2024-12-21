@@ -209,6 +209,10 @@
 import Mainvisual from '@/components/molecules/Mainvisual.vue';
 import VSection from '@/components/molecules/VSection.vue';
 import SectionText from '@/components/molecules/SectionText.vue';
+
+useHead({
+  title: 'Pickup Stories',
+});
 </script>
 
 <style module lang="scss">

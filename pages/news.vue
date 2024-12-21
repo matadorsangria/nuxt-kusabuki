@@ -10,4 +10,8 @@
 <script setup lang="ts">
 import Mainvisual from '@/components/molecules/Mainvisual.vue';
 import NewsArea from '@/components/organisms/NewsArea.vue';
+
+useHead({
+  title: 'News',
+});
 </script>

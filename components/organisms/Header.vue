@@ -6,7 +6,7 @@
     />
     <p class="header__logo">
       <a href="/">
-        <span>Ancient Town Kusabuki</span>
+        <span>{{ SITE_NAME }}</span>
         produced by matadorsangria
       </a>
     </p>
@@ -33,6 +33,8 @@
 </template>
 
 <script setup lang="ts">
+import { SITE_NAME } from '~/constants';
+
 const props = withDefaults(defineProps<{
   page?: string
 }>(), {

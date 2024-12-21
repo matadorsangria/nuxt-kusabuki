@@ -22,9 +22,7 @@
     </div>
     <div :class="$style.mainvisualText">
       <div :class="$style.mainvisualText__inner">
-        <h1 :class="$style.mainvisualText__title">
-          Ancient Town Kusabuki
-        </h1>
+        <h1 :class="$style.mainvisualText__title">{{ SITE_NAME }}</h1>
         <div :class="$style.mainvisualText__produce">
           produced by matadorsangria
         </div>
@@ -42,6 +40,7 @@ import image02 from '~/assets/images/mv_02.jpg';
 import image03 from '~/assets/images/mv_03.jpg';
 import image04 from '~/assets/images/mv_04.jpg';
 import { delay } from '~/assets/js/utils/delay';
+import { SITE_NAME } from '~/constants';
 
 onMounted(() => {
   const $ul = document.querySelector('.js-slide ul') as HTMLUListElement;

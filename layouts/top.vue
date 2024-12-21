@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import { delay } from '~/assets/js/utils/delay';
 import Header from '@/components/organisms/Header.vue';
+import { SITE_NAME } from '~/constants';
 
 onMounted(async () => {
   let isLoaded = false;
@@ -57,6 +58,10 @@ onMounted(async () => {
   await delay(1000);
   document.querySelector('.loading')?.remove();
 });
+
+useHead({
+  title: SITE_NAME,
+})
 </script>
 
 <style scoped lang="scss">
