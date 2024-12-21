@@ -36,7 +36,7 @@
       </li>
     </ul>
     <p class="copyright">
-      Copyright&copy; Matador Sangria Company All Rights Reserved.
+      Copyright&copy; Kusabuki System All Rights Reserved.
     </p>
   </footer>
 </template>

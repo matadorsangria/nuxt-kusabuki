@@ -7,7 +7,7 @@
     <p class="header__logo">
       <a href="/">
         <span>{{ SITE_NAME }}</span>
-        produced by matadorsangria
+        produced by Kusabuki System
       </a>
     </p>
     <div class="sp__menu" @click="switchGlobalMenu">

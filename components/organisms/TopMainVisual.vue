@@ -24,7 +24,7 @@
       <div :class="$style.mainvisualText__inner">
         <h1 :class="$style.mainvisualText__title">{{ SITE_NAME }}</h1>
         <div :class="$style.mainvisualText__produce">
-          produced by matadorsangria
+          produced by Kusabuki System
         </div>
       </div>
     </div>

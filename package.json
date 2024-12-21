@@ -1,8 +1,8 @@
 {
-  "name": "matadorsangria-kusabuki",
+  "name": "kusabuki",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "matadorsangria",
+  "author": "Kusabuki System",
   "private": true,
   "scripts": {
     "dev": "nuxt dev",
