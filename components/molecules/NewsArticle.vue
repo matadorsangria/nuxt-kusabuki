@@ -2,7 +2,7 @@
   <article class="card has-button third bottom order-1">
     <a href="#" :class="$style.news__link" @click.prevent>
       <div :class="$style.news__figure">
-        <nuxt-img :src="`/images/${image}`" alt="" :class="$style.news__image" />
+        <nuxt-img :src="`/images/${image}`" alt="" width="480" height="320" :class="$style.news__image" />
         <p :class="[$style.news__label, $style[`is-${label}`]]">
           {{ label.toUpperCase() }}
         </p>
@@ -32,6 +32,7 @@ defineProps<{
   position: relative;
 }
 .news__image {
+  height: auto;
   width: 100%;
   transition: filter 0.5s;
 }
