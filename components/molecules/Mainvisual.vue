@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.mainvisual"><nuxt-img :src="`/images/${image}`" /></div>
+  <div :class="$style.mainvisual"><nuxt-img :src="`/images/${image}`" alt="" /></div>
 </template>
 
 <script setup lang="ts">
