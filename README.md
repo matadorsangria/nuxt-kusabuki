@@ -8,7 +8,7 @@ yarn
 
 ## Usage
 ```
-yarn start
+yarn build && yarn preview
 ```
 
 ## Development Tools
