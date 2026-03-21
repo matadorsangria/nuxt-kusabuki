@@ -87,7 +87,7 @@ import SectionText from '@/components/molecules/SectionText.vue';
 
 const animation = () => {
   const imgs = Array.from(document.querySelectorAll('.js-photoFrame__img')) as HTMLDivElement[];
-  const clientRect = imgs[0].getBoundingClientRect();
+  const clientRect = imgs[0]!.getBoundingClientRect();
   imgs.forEach((el) => {
     el.style.transform = `matrix(1, 0, 0, 1, 0, ${-clientRect.top / 20})`;
   });

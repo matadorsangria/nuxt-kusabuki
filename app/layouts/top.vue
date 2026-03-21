@@ -33,14 +33,14 @@ onMounted(async () => {
   let count = $separates.length;
   let timer = setInterval(() => {
     const el = $separates[--count];
-    el.classList.add('is-hidden');
+    el!.classList.add('is-hidden');
     if (count === 0) {
       clearInterval(timer);
       if (isLoaded) return;
       count = $separates.length;
       timer = setInterval(async () => {
         const el = $separates[--count];
-        el.classList.remove('is-hidden');
+        el!.classList.remove('is-hidden');
         if (count === 0) {
           clearInterval(timer);
           if (isLoaded) return;

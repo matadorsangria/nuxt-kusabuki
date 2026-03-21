@@ -19,7 +19,7 @@ onMounted(() => {
 });
 
 useHead({
-  titleTemplate: (titleChunk) => {
+  titleTemplate: (titleChunk: string) => {
     return titleChunk ? `${titleChunk} - ${SITE_NAME}` : SITE_NAME;
   },
 });
