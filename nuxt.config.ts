@@ -27,15 +27,12 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.scss'],
-  modules: [
-    '@nuxt/image',
-    ['@nuxtjs/google-fonts', {
-      families: {
-        'Crimson Pro': true,
-        'Noto+Serif JP': {
-          wght: [400, 700],
-        },
-      }
-    }],
-  ],
+  modules: ['@nuxt/image', ['@nuxtjs/google-fonts', {
+    families: {
+      'Crimson Pro': true,
+      'Noto+Serif JP': {
+        wght: [400, 700],
+      },
+    }
+  }], '@nuxt/eslint'],
 });
